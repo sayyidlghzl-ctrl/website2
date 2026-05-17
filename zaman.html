@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0px;
+            background-image: url(https://static.tek.id/2018/12/27/11293/peneliti-temukan-penyebab-zaman-es-1hftK91Raa.jpg);
+            height: 100vh;
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: rgb(113, 212, 212, 0.4);
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+        }
+
+        .nav {
+            background-color: #08c9ff;
+            border-radius: 20px;
+        }
+
+        a {
+            display: inline-block;
+
+            border-radius: 10px;
+            padding: 5px;
+            text-decoration: none;
+
+            margin: 3px;
+            transition: 0.3s ease;
+        }
+
+        a:hover {
+            background-color: aliceblue;
+            transform: translateY(-10px)scale(1.03);
+            box-shadow: 0 4px 20px gray;
+        }
+
+        select {
+            display: inline-block;
+            padding: 6px;
+            background-color: #08c9ff;
+            border-radius: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            transition: 0.3s ease;
+        }
+
+        select:hover {
+            background-color: aliceblue;
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 4px 20px gray;
+        }
+
+        option {
+            display: inline-block;
+            padding: 5px;
+            background-color: #08c9ff;
+            border-radius: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            transition: 0.3s ease;
+        }
+
+        option:hover {
+            background-color: aliceblue;
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 4px 20px gray;
+        }
+
+
+        .point {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            display: inline-block;
+            background-color: rgb(223, 221, 221, 0.6);
+            margin: 20px;
+            padding: 20px;
+            width: 250px;
+            border-radius: 15px;
+            transition: 0.3s;
+            backdrop-filter: blur(1px);
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px gray;
+            background-color: rgb(223, 221, 221, 1);
+        }
+
+        img {
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+            margin: 10px;
+            margin-left: 20px;
+            border-radius: 20px;
+            outline: 5px solid #08c9ff;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: translateY(-10px)scale(1.03);
+            box-shadow: 0 4px 20px gray;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📚Zaman</h1>
+        <nav class="nav">
+            <a href="home.html" class="link">🏠Home</a>
+            <a href="portofolio.html" class="link">🙍🏻‍♂️Info</a>
+            <a href="zaman.html">🌃Zaman</a>
+            <a href="amal.html">✨Dimensi</a>
+        </nav>
+    </header>
+    <section class="point">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfFxkilLGYAaYGyo6GQDkGQHNNSI7owjW_0w&s"
+                alt="foto">
+            <h3>Zaman Madli</h3>
+            <p>Zaman madli adalah zaman waktu yang sudah terlewat, walaupun itu hanya 1detik yang lalu itu bisa di sebut
+                zaman madli.</p>
+        </div>
+        <div class="card">
+            <img src="https://cdn.grid.id/crop/0x0:0x0/360x240/photo/2019/06/13/2905418500.jpg" alt="foto">
+            <h3>Zaman Hal</h3>
+            <p>Zaman Hal adalah zaman kini,yaitu waktu yang sedang di kerjakan.Yakni bukan 1detik yang lalu dan bukan
+                1detik yang akan datang.</p>
+        </div>
+        <div class="card">
+            <img src="https://www.harapanrakyat.com/wp-content/uploads/2020/01/Teknologi-Tercanggih-Masa-Depan.jpg"
+                alt="foto">
+            <h3>Zaman Istiqbal</h3>
+            <p>Zaman Istiqbal adalah zaman yang akan datang,yaitu zaman yang belum kita alami entah bakal di alami atau
+                gak bakal kita alami.</p>
+        </div>
+
+    </section>
+    <div class="footer">
+        <footer>
+            <p>&copy; Iyoss 2026</p>
+        </footer>
+    </div>
+</body>
+
+</html>
