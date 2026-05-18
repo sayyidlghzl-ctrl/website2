@@ -4,92 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Responsive Home</title>
+
     <style>
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            margin: 0px;
             min-height: 100vh;
             background-image: url(https://www.emasjid.id/website/upload/picture/76346646rrrrrrr.jpg);
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             padding-bottom: 100px;
         }
 
+        /* HEADER */
         header {
-            background-color: rgb(113, 212, 212, 0.4);
+            background-color: rgba(113, 212, 212, 0.4);
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px;
             margin-bottom: 20px;
             position: sticky;
             top: 0;
+            backdrop-filter: blur(10px);
+            flex-wrap: wrap;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: white;
         }
 
         .nav {
             background-color: #08c9ff;
             border-radius: 20px;
-            height: 40px;
+            padding: 5px;
         }
 
-        .dt {
-            display: inline-block;
-            padding-right: 5px;
-
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         a {
             display: inline-block;
             color: black;
             border-radius: 10px;
-            padding: 5px;
+            padding: 8px 14px;
             text-decoration: none;
-
             margin: 3px;
             transition: 0.3s ease;
+            font-weight: bold;
         }
 
         a:hover {
             background-color: aliceblue;
-            transform: translateY(-10px)scale(1.03);
+            transform: translateY(-5px) scale(1.03);
             box-shadow: 0 4px 20px gray;
         }
 
-
+        /* CONTENT */
         .judul {
             display: block;
-            padding: 20px;
+            padding: 25px;
             color: aliceblue;
-            width: 200px;
-            background-color: rgb(113, 212, 212);
-            backdrop-filter: blur(1px);
+            width: 90%;
+            max-width: 400px;
+            background-color: rgba(113, 212, 212, 0.7);
+            backdrop-filter: blur(3px);
             border-radius: 20px;
-            transition: 1s ease;
+            transition: 0.5s ease;
+            margin: 20px;
         }
 
         .judul:hover {
-            transform: translateX(30px) scale(1.0);
-            cursor: default;
+            transform: translateX(20px);
             background-color: aquamarine;
         }
 
         .menu {
             display: block;
-            background-color: rgb(113, 212, 212);
-            width: 250px;
+            background-color: rgba(113, 212, 212, 0.7);
+            width: 90%;
+            max-width: 350px;
             padding: 20px;
             border-radius: 20px;
-            align-items: center;
-            margin: 30px;
-            margin-left: auto;
-            transition: 1s ease;
-
+            margin: 30px 20px 30px auto;
+            transition: 0.5s ease;
+            backdrop-filter: blur(3px);
         }
 
         .menu a {
@@ -97,50 +109,23 @@
         }
 
         .menu:hover {
-            transform: translateX(-30px) scale(1.0);
-            cursor: default;
+            transform: translateX(-20px);
             background-color: aquamarine;
         }
 
-        .card {
-            display: block;
-            background-color: rgb(113, 212, 212);
-            width: 250px;
-            padding: 20px;
-            border-radius: 20px;
-            align-items: center;
-            margin: 30px;
-            margin-right: auto;
-            transition: 1s ease;
-
+        .menu h2 {
+            margin-bottom: 10px;
         }
 
-        .card:hover {
-            transform: translateX(-30px) scale(1.0);
-            cursor: default;
-            background-color: aquamarine;
+        .menu p {
+            margin-bottom: 10px;
         }
 
-        .card2 {
-            display: block;
-            background-color: rgb(113, 212, 212);
-            width: 250px;
-            padding: 20px;
-            border-radius: 20px;
-            align-items: center;
-            margin: 30px;
-            margin-right: auto;
-            transition: 1s ease;
-
+        .menu li {
+            margin: 10px 0;
         }
 
-        .card2:hover {
-            transform: translateX(30px) scale(1.0);
-            cursor: default;
-            background-color: aquamarine;
-        }
-
-
+        /* FOOTER */
         .footer {
             width: 100%;
             background-color: #0f172a;
@@ -148,12 +133,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 25px;
-            position: fixed;
-            bottom: 0;
-            box-sizing: border-box;
+            padding: 20px;
+            margin-top: auto;
         }
 
+        /* LOADING */
         .loading {
             position: fixed;
             width: 100%;
@@ -179,6 +163,10 @@
             animation: putar 1s linear infinite;
         }
 
+        .loading h2 {
+            margin-top: 15px;
+        }
+
         @keyframes putar {
             100% {
                 transform: rotate(360deg);
@@ -199,37 +187,97 @@
                 visibility: hidden;
             }
         }
+
+        /* TABLET */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav {
+                width: 100%;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            a {
+                flex: 1;
+            }
+
+            .judul,
+            .menu {
+                margin: 20px auto;
+            }
+
+            .judul:hover,
+            .menu:hover {
+                transform: none;
+            }
+        }
+
+        /* HP */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .judul h1 {
+                font-size: 28px;
+            }
+
+            .judul h2 {
+                font-size: 18px;
+            }
+
+            a {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .menu {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-
     <div class="loading">
         <div class="loader"></div>
         <h2>Loading...</h2>
     </div>
+
     <header>
         <h1>🏠Home</h1>
+
         <div class="nav">
             <nav>
-                <a href="index.html" class="link">🏠Home</a>
-                <a href="portofolio.html" class="link">🙍🏻‍♂️Info</a>
+                <a href="index.html">🏠Home</a>
+                <a href="portofolio.html">🙍🏻‍♂️Info</a>
             </nav>
         </div>
     </header>
+
     <div class="judul">
-        <h1>Selamat datang</h1>
-        <h2>Di Website ke 2 saya👋🏻</h2>
+        <h1>Selamat Datang</h1>
+        <h2>Di Website ke 2 saya 👋🏻</h2>
     </div>
+
     <div class="menu">
-        <H2>Halaman</H2>
-        <p>Halaman yang akan di tampilkan :</p>
-        <ul type='none'>
-            <li>👉🏻<a href="zaman.html">Zaman</a></li>
-            <li>👉🏻<a href="dimensi.html">Dimensi</a></li>
+        <h2>Halaman</h2>
+
+        <p>Halaman yang akan ditampilkan :</p>
+
+        <ul type="none">
+            <li>👉🏻 <a href="zaman.html">Zaman</a></li>
+            <li>👉🏻 <a href="dimensi.html">Dimensi</a></li>
         </ul>
     </div>
+
     <div class="footer">
         <footer>
             <p>&copy; Iyoss 2026</p>
