@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Iyoss</title>
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
     <style>
-        /* Reset */
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -17,68 +18,81 @@
         }
 
         body {
-            width : 0px;
-            min-height : 100vh;
+            min-height: 100vh;
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
             color: white;
+            overflow-x: hidden;
         }
 
+        /* HEADER */
         header {
-            background-color: rgb(113, 212, 212, 0.4);
+            background-color: rgba(113, 212, 212, 0.4);
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px;
             margin-bottom: 20px;
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .nav {
             background-color: #08c9ff;
             border-radius: 20px;
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         a {
             display: inline-block;
             color: #1e1e2f;
             border-radius: 10px;
-            padding: 5px;
+            padding: 8px 14px;
             text-decoration: none;
             margin: 3px;
             transition: 0.3s ease;
+            font-weight: bold;
         }
 
         a:hover {
             background-color: aliceblue;
-            transform: translateY(-10px)scale(1.03);
+            transform: translateY(-5px) scale(1.03);
             box-shadow: 0 4px 20px gray;
         }
 
-
-
-
-        /* Hero */
+        /* HERO */
         .hero {
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            padding: 80px 50px;
+            justify-content: center;
+            gap: 50px;
+            padding: 80px 30px;
             flex-wrap: wrap;
             text-align: center;
         }
 
         .hero img {
-            width: 200px;
+            width: 220px;
+            max-width: 90%;
             border-radius: 50%;
             border: 4px solid #00ffd5;
             box-shadow: 0 0 25px #00ffd5;
-            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            max-width: 500px;
         }
 
         .hero-text h2 {
-            font-size: 40px;
+            font-size: 42px;
+            margin-bottom: 10px;
         }
 
         .hero-text span {
@@ -88,18 +102,20 @@
         .hero-text p {
             margin: 10px 0;
             opacity: 0.8;
+            line-height: 1.6;
         }
 
-        /* Button */
+        /* BUTTON */
         .btn {
             display: inline-block;
             margin-top: 15px;
-            padding: 10px 25px;
+            padding: 12px 25px;
             background: #00ffd5;
             color: black;
             border-radius: 25px;
             text-decoration: none;
             transition: 0.3s;
+            font-weight: bold;
         }
 
         .btn:hover {
@@ -107,25 +123,30 @@
             transform: scale(1.05);
         }
 
-        /* Projects */
+        /* PROJECT */
         .projects {
-            padding: 50px;
+            padding: 50px 20px;
             text-align: center;
         }
 
+        .projects h2 {
+            margin-bottom: 30px;
+            font-size: 35px;
+        }
+
         .project-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
         }
 
         .card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            width: 250px;
+            padding: 25px;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
             transition: 0.3s;
         }
@@ -133,9 +154,11 @@
         .card img {
             border: 1px solid aqua;
             border-radius: 10px;
-            padding: 20px;
-            width: 50px;
-            padding-bottom: 10px;
+            padding: 15px;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            margin-bottom: 15px;
         }
 
         .card:hover {
@@ -145,15 +168,21 @@
 
         .card h3 {
             color: #00ffd5;
+            margin-bottom: 10px;
         }
 
-        /* Footer */
+        .card p {
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             opacity: 0.7;
         }
 
+        /* LOADING */
         .loading {
             position: fixed;
             width: 100%;
@@ -179,6 +208,10 @@
             animation: putar 1s linear infinite;
         }
 
+        .loading h2 {
+            margin-top: 15px;
+        }
+
         @keyframes putar {
             100% {
                 transform: rotate(360deg);
@@ -199,80 +232,169 @@
                 visibility: hidden;
             }
         }
-    </style>
+
+        /* TABLET */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav {
+                width: 100%;
+            }
+
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero-text h2 {
+                font-size: 34px;
+            }
+        }
+
+        /* HP */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            a {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .hero img {
+                width: 170px;
+            }
+
+            .hero-text h2 {
+                font-size: 28px;
+            }
+
+            .hero-text p {
+                font-size: 14px;
+            }
+
+            .projects h2 {
+                font-size: 28px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- LOADING -->
     <div class="loading">
         <div class="loader"></div>
         <h2>Loading...</h2>
     </div>
 
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <header>
         <h1>Iyoss</h1>
+
         <nav class="nav">
-            <a href="index.html" class="link">🏠Home</a>
-            <a href="portofolio.html" class="link">🙍🏻‍♂️Info</a>
+            <a href="index.html">🏠Home</a>
+            <a href="portofolio.html">🙍🏻‍♂️Info</a>
             <a href="zaman.html">🌃Zaman</a>
             <a href="dimensi.html">✨Dimensi</a>
         </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero">
+
         <div>
             <img src="https://i.postimg.cc/zDkHxpS5/saya.jpg" alt="saya">
         </div>
 
         <div class="hero-text">
             <h2>Halo, saya <span>Al Ghozali</span></h2>
-            <p>Siswa SMK PPLG yang sedang belajar web development</p>
-            <a href="#" class="btn">Lihat Project</a>
+
+            <p>
+                Siswa SMK PPLG yang sedang belajar web development
+            </p>
+
+            <a href="#project" class="btn">Lihat Project</a>
         </div>
+
     </section>
 
-    <!-- Projects -->
+    <!-- PROJECT -->
     <section class="projects" id="project">
+
         <h2>Project Saya</h2>
 
         <div class="project-container">
+
             <div class="card">
-                <img src="" alt="foto" class="foto">
+                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="foto">
+
                 <h3>Website Login</h3>
-                <p>Membuat sistem login menggunakan HTML & PHP</p>
+
+                <p>
+                    Membuat sistem login menggunakan HTML & PHP
+                </p>
             </div>
 
             <div class="card">
-                <img src="" alt="foto" class="foto">
+                <img src="https://cdn-icons-png.flaticon.com/512/1005/1005141.png" alt="foto">
+
                 <h3>Website</h3>
-                <p>Website tampilan sederhana</p>
+
+                <p>
+                    Website tampilan sederhana
+                </p>
             </div>
 
             <div class="card">
-                <img src="" alt="foto" class="foto">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="foto">
+
                 <h3>Portfolio</h3>
-                <p>Website portfolio pribadi saya</p>
+
+                <p>
+                    Website portfolio pribadi saya
+                </p>
             </div>
+
         </div>
+
     </section>
+
+    <!-- KONTAK -->
     <section class="projects">
-        <h2 id="kartu">Kontak</h2>
+
+        <h2>Kontak</h2>
+
         <div class="project-container">
+
             <div class="card">
                 <h3>Kontak Saya</h3>
-                <p>ig :
-                <div style="color: #00ffd5;"> musaghial</div>
+
+                <p>
+                    IG :
+                    <span style="color:#00ffd5;">musaghial</span>
                 </p>
-                <p>No.Wa:
-                <div style="color: aqua;">+62859113506385</div>
+
+                <br>
+
+                <p>
+                    No.WA :
+                    <span style="color:aqua;">+62859113506385</span>
                 </p>
             </div>
+
         </div>
+
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <p>© 2026 Iyoss | senang senang aja bikin</p>
     </footer>
