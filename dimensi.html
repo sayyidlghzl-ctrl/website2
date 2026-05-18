@@ -4,108 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card</title>
+    <title>Card Responsive</title>
+
     <style>
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            margin: 0px;
             background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDjnGsur9_aFdIxAHh4iFy4vreFW8IWOiTGA&s);
-            height: 100vh;
-            background-size: 100% 100%;
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
+        /* HEADER */
         header {
-            background-color: rgb(113, 212, 212, 0.4);
+            background-color: rgba(113, 212, 212, 0.4);
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px;
-            margin-bottom: 20px;
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            color: white;
         }
 
         .nav {
             background-color: #08c9ff;
             border-radius: 20px;
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         a {
             display: inline-block;
             color: #0f172a;
             border-radius: 10px;
-            padding: 5px;
+            padding: 8px 14px;
             text-decoration: none;
-
             margin: 3px;
             transition: 0.3s ease;
+            font-weight: bold;
         }
 
         a:hover {
             background-color: aliceblue;
-            transform: translateY(-10px)scale(1.03);
+            transform: translateY(-5px) scale(1.03);
             box-shadow: 0 4px 20px gray;
         }
 
+        /* CARD AREA */
         .point {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .card {
-            display: inline-block;
-            background-color: rgb(223, 221, 221, 0.6);
-            margin: 20px;
+            background-color: rgba(223, 221, 221, 0.6);
             padding: 20px;
-            width: 250px;
-            border-radius: 15px;
+            border-radius: 20px;
             transition: 0.3s;
-            backdrop-filter: blur(1px);
+            backdrop-filter: blur(4px);
         }
 
         .card:hover {
             transform: scale(1.03);
             box-shadow: 0 4px 20px gray;
-            background-color: rgb(223, 221, 221, 1);
+            background-color: rgba(223, 221, 221, 1);
         }
 
         img {
-            width: 200px;
-            height: 140px;
+            width: 100%;
+            height: 180px;
             object-fit: cover;
-            margin: 10px;
-            margin-left: 20px;
             border-radius: 20px;
             outline: 5px solid #08c9ff;
             transition: 0.3s;
         }
 
         img:hover {
-            transform: translateY(-10px)scale(1.03);
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 4px 20px gray;
         }
 
-        .footer {
-            width: 100%;
-            background-color: #0f172a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-            position: fixed;
-            bottom: 0;
+        .card h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #0f172a;
         }
 
+        .card p {
+            line-height: 1.6;
+            color: #1e293b;
+        }
 
+        /* LOADING */
         .loading {
             position: fixed;
             width: 100%;
@@ -131,6 +144,10 @@
             animation: putar 1s linear infinite;
         }
 
+        .loading h2 {
+            margin-top: 15px;
+        }
+
         @keyframes putar {
             100% {
                 transform: rotate(360deg);
@@ -151,68 +168,114 @@
                 visibility: hidden;
             }
         }
+
+        /* TABLET */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav {
+                width: 100%;
+            }
+
+            a {
+                flex: 1;
+            }
+        }
+
+        /* HP */
+        @media (max-width: 480px) {
+            .point {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            img {
+                height: 160px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            a {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-
     <div class="loading">
         <div class="loader"></div>
         <h2>Loading...</h2>
     </div>
+
     <header>
         <h1>✨Dimensi</h1>
+
         <nav class="nav">
-            <a href="index.html" class="link">🏠Home</a>
-            <a href="portofolio.html" class="link">🙍🏻‍♂️Info</a>
+            <a href="index.html">🏠Home</a>
+            <a href="portofolio.html">🙍🏻‍♂️Info</a>
             <a href="zaman.html">🌃Zaman</a>
             <a href="dimensi.html">✨Dimensi</a>
         </nav>
     </header>
+
     <section class="point">
+
         <div class="card">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhCmXGwrewN3_p65WtS4MgrLRK8HWHsR5k7g&s"
                 alt="foto">
+
             <h3>Dimensi 1 (1D)</h3>
-            <p> Hanya memiliki panjang.
-                Contoh:
 
-                Garis dan
-                Tali
+            <p>
+                Hanya memiliki panjang.
+                <br><br>
+                Contoh:
+                Garis dan Tali.
             </p>
         </div>
+
         <div class="card">
-            <img src="https://c8.alamy.com/comp/M1DG06/2d-framed-logo-mark-vector-graphic-design-M1DG06.jpg" alt="foto">
-            <h3>Dimensi 2 (2D)</h3>
-            <p> Memiliki panjang dan lebar.
-                Bentuknya datar.
-                Contoh:
+            <img src="https://c8.alamy.com/comp/M1DG06/2d-framed-logo-mark-vector-graphic-design-M1DG06.jpg"
+                alt="foto">
 
-                Persegi,
-                Lingkaran,dan
-                Segitiga
+            <h3>Dimensi 2 (2D)</h3>
+
+            <p>
+                Memiliki panjang dan lebar.
+                Bentuknya datar.
+                <br><br>
+                Contoh:
+                Persegi, Lingkaran, dan Segitiga.
             </p>
         </div>
+
         <div class="card">
             <img src="https://play-lh.googleusercontent.com/Tn3N0AADvez9AnawaM3dTQWMNfP_psBIT8p89cn3jzKxuwEx5_Fv-l1PqQmXWzNYcPk"
                 alt="foto">
-            <h3>Dimensi 3 (3D)</h3>
-            <p>Memiliki panjang, lebar, dan tinggi.
-                Bentuknya memiliki volume/ruang.
-                Contoh:
 
-                Kubus,
-                Bola,dan
-                Tabung</p>
+            <h3>Dimensi 3 (3D)</h3>
+
+            <p>
+                Memiliki panjang, lebar, dan tinggi.
+                Bentuknya memiliki volume/ruang.
+                <br><br>
+                Contoh:
+                Kubus, Bola, dan Tabung.
+            </p>
         </div>
 
     </section>
-    <div class="footer">
-        <footer>
-            <p>&copy; Iyoss 2026</p>
-        </footer>
-    </div>
 
 </body>
 
